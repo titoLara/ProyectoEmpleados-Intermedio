@@ -6,26 +6,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class cargoModel {
+public class direccionEmpleadoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCargo;
+    private Long idDireccion;
 
     @Column(nullable = false)
-    private String nombreCargo;
+    private String calleEmpleado;
 
     @Column(nullable = false)
-    private String nivelJerarquico;
+    private String ciudadEmpleado;
 
-    @OneToMany(mappedBy = "cargoModel")
-    private List<empleadosModel> empleadosModelList;
+    @Column(unique = false)
+    private String paisEmpleado;
+
+    @OneToOne(mappedBy = "direccionEmpleadoModel")
+    private empleadosModel empleadosModel;
 
 }

@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -23,4 +25,7 @@ public class proyectoModel {
 
     @Column(nullable = false)
     private LocalDate fechaFin;
+
+    @ManyToMany(mappedBy = "proyectoModels")
+    private List<empleadosModel> empleadosModelList;
 }

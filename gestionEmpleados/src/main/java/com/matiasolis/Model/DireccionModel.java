@@ -1,5 +1,6 @@
 package com.matiasolis.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +12,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class direccionEmpleadoModel {
+public class DireccionModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +27,8 @@ public class direccionEmpleadoModel {
     @Column(unique = false)
     private String paisEmpleado;
 
-    @OneToOne(mappedBy = "direccionEmpleadoModel")
-    private empleadosModel empleadosModel;
+    @OneToOne(mappedBy = "direccionModel")
+    @JsonIgnore
+    private EmpleadosModel empleadosModel;
 
 }

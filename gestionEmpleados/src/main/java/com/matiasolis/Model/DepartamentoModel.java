@@ -1,5 +1,7 @@
 package com.matiasolis.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +11,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class departamentoEmpleado {
+public class DepartamentoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +24,7 @@ public class departamentoEmpleado {
     private String ubicacion;
 
     //ONETOMANY EMPLEADOS
-    @OneToMany(mappedBy = "departamentoEmpleado")
-    private List<empleadosModel > empleadosModelList;
+    @OneToMany(mappedBy = "departamentoModel")
+    @JsonBackReference
+    private List<EmpleadosModel> empleadosModelList;
 }

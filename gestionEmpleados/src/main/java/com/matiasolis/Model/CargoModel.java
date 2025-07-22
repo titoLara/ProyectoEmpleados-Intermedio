@@ -1,5 +1,7 @@
 package com.matiasolis.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +15,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class cargoModel {
+public class CargoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +28,7 @@ public class cargoModel {
     private String nivelJerarquico;
 
     @OneToMany(mappedBy = "cargoModel")
-    private List<empleadosModel> empleadosModelList;
+    @JsonBackReference
+    private List<EmpleadosModel> empleadosModelList;
 
 }

@@ -1,9 +1,9 @@
 package com.matiasolis.Repository;
 
-import com.matiasolis.Model.EmpleadosModel;
+import com.matiasolis.Model.CargoModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IEmpleadoRepository extends JpaRepository<EmpleadosModel, Long> {
+public interface ICargoRepository extends JpaRepository<CargoModel, Long> {
 }

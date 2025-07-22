@@ -1,5 +1,6 @@
 package com.matiasolis.Model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +11,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class empleadosModel {
+public class EmpleadosModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,14 +29,16 @@ public class empleadosModel {
     @Column(nullable = false)
     private String dniEmpleado;
 
-    @OneToOne
+    //ONE TO ONE
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "direccion_id")
-    private direccionEmpleadoModel direccionEmpleadoModel;
+    private DireccionModel direccionModel;
 
     //MANYTOONE DEPARTAMENTO
     @ManyToOne
     @JoinColumn(name = "departamento_id")
-    private departamentoEmpleado departamentoEmpleado;
+    @JsonManagedReference
+    private DepartamentoModel departamentoModel;
 
     //MANYTOMANY PROYECTO
     @ManyToMany
@@ -44,10 +47,12 @@ public class empleadosModel {
             joinColumns = @JoinColumn(name = "empleado_id" ),
             inverseJoinColumns = @JoinColumn(name = "proyecto_id")
     )
-    private List<proyectoModel> proyectoModels;
+    @JsonManagedReference
+    private List<ProyectoModel> proyectoModels;
 
     //MANYTOONE CARGO
     @ManyToOne
-    @JoinColumn(name = "cargo_id")
-    private cargoModel cargoModel;
+    @JoinColumn(name = "cargo_empleado")
+    @JsonManagedReference
+    private CargoModel cargoModel;
 }

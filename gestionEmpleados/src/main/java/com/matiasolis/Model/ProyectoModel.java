@@ -1,17 +1,22 @@
 package com.matiasolis.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
-public class proyectoModel {
+@AllArgsConstructor
+@NoArgsConstructor
+public class ProyectoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,5 +32,7 @@ public class proyectoModel {
     private LocalDate fechaFin;
 
     @ManyToMany(mappedBy = "proyectoModels")
-    private List<empleadosModel> empleadosModelList;
+    @JsonBackReference
+    private List<EmpleadosModel> empleadosModelList;
+
 }

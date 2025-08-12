@@ -1,1 +1,18 @@
-<p>empleados-pincipal works!</p>
+<button class="btn btn-primary" routerLink="/">Inicio</button>
+
+<div class="container-fluid text-center mt-3">
+    <p class="fs-1 fw-bold">Ahora estas en EMPLEADOS!!!!</p>
+    <p class="lead fw-medium">Recuerda que antes de Crear un Empleado primero se debe crear los Cargos, Departementos y Proyectos</p>
+</div>
+
+<nav class="navbar justify-content-center">
+    <div class="d-flex flex-wrap ">
+        <a class="m-1 btn btn-info" routerLink="crearEmpleado">Crear Empleado</a>
+        <a class="m-1 btn btn-info"routerLink="listarEmpleado">Ver Empleados</a>
+        <a class="m-1 btn btn-info"routerLink="actualizarEmpleado">Actualizar Empleados</a>
+    </div>
+
+</nav>
+
+<router-outlet></router-outlet>
+

@@ -1,1 +1,18 @@
-<p>proyecto-principal works!</p>
+<button class="btn btn-primary" routerLink="/">Inicio</button>
+
+<div class="container-fluid text-center mt-3">
+    <p class="fs-1 fw-bold">Ahora estas en PRROYECTOS!!!!</p>
+    <p class="lead fw-medium">Recuerda que antes de Crear un Empleado primero se debe crear los Cargos, Departementos y Proyectos</p>
+</div>
+
+<nav class="navbar justify-content-center">
+    <div class="d-flex flex-wrap ">
+        <a class="m-1 btn btn-info" routerLink="crearProyecto">Crear Proyecto</a>
+        <a class="m-1 btn btn-info"routerLink="listarProyecto">Ver Proyectos</a>
+        <a class="m-1 btn btn-info"routerLink="actualizarProyecto">Actualizar Proyecto</a>
+    </div>
+
+</nav>
+
+<router-outlet></router-outlet>
+

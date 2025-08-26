@@ -37,7 +37,6 @@ public class EmpleadosModel {
     //MANYTOONE DEPARTAMENTO
     @ManyToOne
     @JoinColumn(name = "departamento_id")
-    @JsonManagedReference
     private DepartamentoModel departamentoModel;
 
     //MANYTOMANY PROYECTO
@@ -47,12 +46,10 @@ public class EmpleadosModel {
             joinColumns = @JoinColumn(name = "empleado_id" ),
             inverseJoinColumns = @JoinColumn(name = "proyecto_id")
     )
-    @JsonManagedReference
     private List<ProyectoModel> proyectoModels;
 
     //MANYTOONE CARGO
     @ManyToOne
     @JoinColumn(name = "cargo_empleado")
-    @JsonManagedReference
     private CargoModel cargoModel;
 }

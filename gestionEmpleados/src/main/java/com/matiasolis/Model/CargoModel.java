@@ -28,7 +28,7 @@ public class CargoModel {
     private String nivelJerarquico;
 
     @OneToMany(mappedBy = "cargoModel")
-    @JsonBackReference
+    @JsonIgnore
     private List<EmpleadosModel> empleadosModelList;
 
 }

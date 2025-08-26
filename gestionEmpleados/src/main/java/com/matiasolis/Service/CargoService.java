@@ -50,7 +50,7 @@ public class CargoService {
 
             return cargoRepository.save(cargo);
         }catch (Exception e){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No se pudo eliminar el ID: "+id+" correctamente, ERROR: "+e);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No se pudo actualizar el ID: "+id+" correctamente, ERROR: "+e);
         }
 
     }

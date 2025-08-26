@@ -1,5 +1,30 @@
-<form [formGroup]="proyectoForm">
-    <div>
-        
-    </div>
-</form>
+<div class="container-sm col-md-4">
+
+    <form [formGroup]="proyectoForm" (ngSubmit)="guardar()">
+        <div class="m-1 text-center">
+            <label class="fs-4 fw-bold" >Nombre del Proyecto</label>
+        </div>
+        <div class="m-1 text-center">
+            <input class="col-7" type="text" formControlName="nombreProyecto">
+        </div>
+
+    <div class="border border-black"></div>
+
+        <div class="m-1">
+            <label class="col-4  fw-bold"> Fecha de Inicio: </label>
+            <input class="col-7" type="date" formControlName="fechaInicio">
+        </div>
+
+        <div class="m-1">
+            <label class="col-4 fw-bold"> Fecha de Fin: </label>
+            <input class="col-7" type="date" formControlName="fechaFin">
+        </div>
+
+        <div class="text-center m-2 ">
+            <button type="submit"> Guardar</button>
+            <button type="button" (click)="limpiar()">Limpiar</button>
+        </div>
+
+    </form>
+
+</div>

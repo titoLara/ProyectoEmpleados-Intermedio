@@ -92,7 +92,7 @@ export const routes: Routes = [
                 component: GetProyectosComponent
             },
             {
-                path: "actualizarProyecto",
+                path: "actualizarProyecto/:id",
                 component: PutProyectosComponent
             }
         ]

@@ -25,6 +25,6 @@ public class DepartamentoModel {
 
     //ONETOMANY EMPLEADOS
     @OneToMany(mappedBy = "departamentoModel")
-    @JsonBackReference
+    @JsonIgnore
     private List<EmpleadosModel> empleadosModelList;
 }

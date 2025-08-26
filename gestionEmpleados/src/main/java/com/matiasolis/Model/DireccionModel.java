@@ -28,7 +28,6 @@ public class DireccionModel {
     private String paisEmpleado;
 
     @OneToOne(mappedBy = "direccionModel")
-    @JsonIgnore
     private EmpleadosModel empleadosModel;
 
 }

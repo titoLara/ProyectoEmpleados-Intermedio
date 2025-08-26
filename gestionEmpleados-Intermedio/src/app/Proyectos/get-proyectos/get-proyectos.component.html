@@ -1,1 +1,35 @@
-<p>get-proyectos works!</p>
+<div class="container-sm">
+    <h1 class="text-center">Todos los Proyectos</h1>
+    <table class="table table-hover table-bordered text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (proyecto of proyectos; track $index) {
+                <tr>
+                    <td>{{proyecto.idProyecto}}</td>
+                    <td>{{proyecto.nombreProyecto}}</td>
+                    <td>{{proyecto.fechaInicio}}</td>
+                    <td>{{proyecto.fechaFin}}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm m-1" [routerLink]="['/proyectos/actualizarProyecto', proyecto.idProyecto]">
+                            Actualizar
+                        </button>
+                        <button class="btn btn-danger btn-sm"  
+                        (click)="confirmDelete(proyecto.idProyecto)">
+                            Eliminar
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

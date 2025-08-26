@@ -1,1 +1,30 @@
-<p>put-proyectos works!</p>
+<h1 class="text-center">Actualizar Proyecto</h1>
+
+<div class="container-sm col-md-4">
+    <form (ngSubmit)="actualizarProyecto()">
+        <div class="m-1 text-center fs-4 fw-bold">
+            <label for="">Nombre del Proyecto:</label>
+        </div>
+        <div class="m-1 text-center ">
+            <input class="col-7" type="text" [(ngModel)] = "proyecto.nombreProyecto" name="nombreProyecto">
+        </div>
+        
+        <div class="border border-black"></div>
+
+        <div class="text-center">
+            <label class="m-1 col-4 fw-bold" for="">Fecha Inicio:</label>
+            <input class="m-1 col-6" type="date" [(ngModel)] = "proyecto.fechaInicio" name="fechaInicio">
+        </div>
+
+        <div class="text-center">
+            <label class="m-1 col-4 fw-bold" for="">Fecha Fin:</label>
+            <input class="m-1 col-6" type="date" [(ngModel)] = "proyecto.fechaFin" name="fechaFin">
+        </div>
+
+        <div class="m-1 text-center">
+            <button class="m-1 btn btn-succes border border-black" type="submit">Actualizar</button>
+            <button class="btn btn-danger" [routerLink]="['/proyectos/listarProyecto']" > Regresar </button>
+        </div>
+
+    </form>
+</div>

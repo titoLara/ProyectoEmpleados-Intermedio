@@ -56,6 +56,8 @@ public class ProyectoService {
 
     //METODO DELETE
     public Boolean deleteById(Long id){
+        proyectoRepository.findById(id).orElseThrow(()->new
+                ResponseStatusException(HttpStatus.BAD_REQUEST,"El proyecto con el id "+id+" no existe"));
         try {
             proyectoRepository.deleteById(id);
             return true;

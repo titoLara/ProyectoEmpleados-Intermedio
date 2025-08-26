@@ -3,6 +3,7 @@ package com.matiasolis.Model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,7 @@ public class ProyectoModel {
     private Long idProyecto;
 
     @Column(nullable = false)
+    @NotBlank
     private String nombreProyecto;
 
     @Column(nullable = false)
@@ -32,7 +34,7 @@ public class ProyectoModel {
     private LocalDate fechaFin;
 
     @ManyToMany(mappedBy = "proyectoModels")
-    @JsonBackReference
+    @JsonIgnore
     private List<EmpleadosModel> empleadosModelList;
 
 }

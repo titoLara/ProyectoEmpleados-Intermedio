@@ -1,1 +1,20 @@
-<p>post-cargos works!</p>
+<div class="container-sm col-md-4">
+    <form [formGroup]="cargoForm" (ngSubmit)="guardar()">
+        <div class="m-1 text-center">
+            <label class="fs-4 fw-bold" for="">Nombre del Cargo:</label>
+        </div>
+        <div class="text-center">
+            <input class="col-7" type="text" formControlName="nombreCargo">
+        </div >
+        <div class="m-1 text-center">
+            <label class="fs-4 fw-bold" for="">Nivel Jerarquico:</label>
+        </div>
+        <div class="text-center">
+            <input class="col-7" type="text" formControlName="nivelJerarquico">
+        </div>
+
+        <div class="text-center">
+            <button class="m-1 btn  btn-success" type="submit">Crear Empleado</button>
+        </div>
+    </form>
+</div>

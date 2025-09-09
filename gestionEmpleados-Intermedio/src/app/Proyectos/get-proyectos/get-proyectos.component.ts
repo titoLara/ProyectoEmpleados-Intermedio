@@ -21,7 +21,7 @@ export class GetProyectosComponent {
   }
 
   getProyectos(){
-    this.proyectoService.getEmpleado().subscribe({
+    this.proyectoService.getProyecto().subscribe({
       next : (data) =>{
         this.proyectos = data;
         this.getProyectos();

@@ -48,6 +48,11 @@ export const routes: Routes = [
         component: CargoPrincipalComponent,
         children:[
             {
+                path:"",
+                redirectTo:"crearCargo",
+                pathMatch: "full"
+            },
+            {
                 path:"crearCargo",
                 component: PostCargosComponent
             },
@@ -56,7 +61,7 @@ export const routes: Routes = [
                 component:GetCargosComponent
             },
             {
-                path:"actualizarCargo",
+                path:"actualizarCargo/:id",
                 component: PutCargosComponent
             }
         ]
@@ -83,6 +88,11 @@ export const routes: Routes = [
         path:"proyectos",
         component: ProyectoPrincipalComponent,
         children:[
+            {
+                path:"",
+                redirectTo:"crearProyecto",
+                pathMatch:"full"
+            },
             {
                 path: "crearProyecto",
                 component: PostProyectosComponent

@@ -1,1 +1,23 @@
-<p>put-cargos works!</p>
+
+<div class="container-sm col-md-4">
+    <h1 class="text-center  m-2 fw-bold">ACTUALIZAR CARGO</h1>
+    <form (ngSubmit)="actualizarCargo()">
+        <div class="m-1 text-center">
+            <label class="fs-4 fw-bold" for="">Nombre del Cargo:</label>
+        </div>
+        <div class="text-center">
+            <input class="col-7" type="text" [(ngModel)]="cargo.nombreCargo" name="nombreCargo">
+        </div >
+        <div class="m-1 text-center">
+            <label class="fs-4 fw-bold" for="">Nivel Jerarquico:</label>
+        </div>
+        <div class="text-center">
+            <input class="col-7" type="text" [(ngModel)]="cargo.nivelJerarquico" name = "nivelJerarquico">
+        </div>
+        <div class="m-1 text-center">
+            <button class="btn btn-succes text-center border border-black m-1" type="submit"> Actualizar</button>
+            <button class="btn btn-danger text-center" [routerLink]="['/cargos/listarCargo']">Regresar</button>
+        </div>
+
+    </form>
+</div>

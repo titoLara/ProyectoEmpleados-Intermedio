@@ -57,11 +57,14 @@ public class CargoService {
 
     //METODO DELETE
     public Boolean deleteById(Long id){
+        cargoRepository.findById(id)
+                .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "El Proyecto con el ID:"+id+" no existe"));
+
         try{
             cargoRepository.deleteById(id);
             return true;
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"No se pudo eliminar el Id:"+id+" Correctamente ");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"No se pudo eliminar el Cargo con el Id:"+id+" Correctamente ");
         }
     }
 }

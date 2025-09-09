@@ -1,1 +1,28 @@
-<p>get-cargos works!</p>
+<div class="container-sm">
+    <h1 class="text-center">Lista de Cargos</h1>
+
+    <table class="table table-bordered text-center ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE CARGO</th>
+                <th>NIVEL JERARQUICO</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (cargo of cargos; track $index) {
+            <tr>
+                <td>{{cargo.idCargo}}</td>
+                <td>{{cargo.nombreCargo}}</td>
+                <td>{{cargo.nivelJerarquico}}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" (click)="confirmDelete(cargo.idCargo)">Eliminar</button>
+                    <button class="btn btn-warning btn-sm m-1" [routerLink]="['/cargos/actualizarCargo', cargo.idCargo]">Actualizar</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

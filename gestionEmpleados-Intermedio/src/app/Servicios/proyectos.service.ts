@@ -10,7 +10,7 @@ export class ProyectosService {
 
   constructor(private htpp : HttpClient) { }
 
-  getEmpleado(){
+  getProyecto(){
     return this.htpp.get<Proyecto[]>(this.API_URL)
   }
 

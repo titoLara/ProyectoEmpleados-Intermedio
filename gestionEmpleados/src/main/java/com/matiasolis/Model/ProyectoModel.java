@@ -3,6 +3,8 @@ package com.matiasolis.Model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,9 +30,11 @@ public class ProyectoModel {
     private String nombreProyecto;
 
     @Column(nullable = false)
+    @FutureOrPresent(message = "No se Puede poner una fecha Pasada")
     private LocalDate fechaInicio;
 
     @Column(nullable = false)
+    @Future(message = "La fecha debe ser Posterior a Hoy dia")
     private LocalDate fechaFin;
 
     @ManyToMany(mappedBy = "proyectoModels")

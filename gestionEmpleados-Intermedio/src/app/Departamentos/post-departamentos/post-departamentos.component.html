@@ -1,1 +1,22 @@
-<p>post-departamentos works!</p>
+
+<div class="container-sm text-center  col-md-4">
+    <form [formGroup]="departamentoForm" (ngSubmit)="guardar()">
+        <div>
+            <label class="fs-4 fw-bold">Nombre Departamento</label>
+        </div>
+        <div>
+            <input class="col-7" type="text" formControlName="nombreDepartamento">
+        </div>
+
+        <div>
+            <label class="fs-4 fw-bold" for="">Ubicacion</label>
+        </div>
+        <div>
+            <input class="col-7" type="text" formControlName="ubicacion">
+        </div>
+
+        <div>
+            <button type="submit" class="m-1 btn btn-success">Crear Departamento</button>
+        </div>
+    </form>
+</div>

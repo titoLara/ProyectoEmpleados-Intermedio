@@ -71,6 +71,11 @@ export const routes: Routes = [
         component: DepartamentoPrincipalComponent,
         children:[
             {
+                path:"",
+                redirectTo : "crearDepartamento",
+                pathMatch : "full"
+            },
+            {
                 path: "crearDepartamento",
                 component : PostDepartamentosComponent
             },
@@ -79,7 +84,7 @@ export const routes: Routes = [
                 component: GetDepartamentosComponent
             },
             {
-                path: "actualizarDepartamento",
+                path: "actualizarDepartamento/:id",
                 component: PutDepartamentosComponent
             }
         ]

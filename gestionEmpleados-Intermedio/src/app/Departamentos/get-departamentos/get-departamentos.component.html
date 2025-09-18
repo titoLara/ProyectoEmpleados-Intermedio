@@ -1,1 +1,28 @@
-<p>get-departamentos works!</p>
+<div class="container-sm text-center   " >
+    <h1>Lista de Departamentos</h1>
+    <table class="table table-bordered ">
+        <thead class="table table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre Departamento</th>
+                <th>Ubicacion</th>
+                <th>Acctiones</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            @for (departamento of departamentos; track $index) {
+                <tr>
+                    <td>{{departamento.idDepartamento}}</td>
+                    <td>{{departamento.nombreDepartamento}}</td>
+                    <td>{{departamento.ubicacion}}</td>
+                    <td>
+                        <button class="btn btn-warning m-1" [routerLink]="['/departamentos/actualizarDepartamento',departamento.idDepartamento]">Editar</button>
+                        <button (click)="confirmDelete(departamento.idDepartamento)" class="btn btn-danger m-1">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

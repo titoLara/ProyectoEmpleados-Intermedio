@@ -1,1 +1,22 @@
-<p>put-departamentos works!</p>
+<div class="container-sm text-center">
+    <h1>Actualizar Departamento</h1>
+    <form (ngSubmit)="actualizarDepartamento()">
+        <div>
+            <label class="fw-bold fs-4" for="">Nombre Departamento</label>
+        </div>
+        <div>
+            <input type="text" name="nombreDepartamento" [(ngModel)]="departamentos.nombreDepartamento">
+        </div>
+
+        <div>
+            <label class="fw-bold fs-4" for="">Ubicacion</label>
+        </div>
+        <div>
+            <input type="text" name="ubicacion" [(ngModel)]="departamentos.ubicacion">
+        </div>
+        <div class="m-1">
+            <button class="btn btn-success m-1" [routerLink]="['/departamentos/listarDepartamento']">Regresar</button>
+            <button type="submit" class="btn btn-warning m-1">Actualizar</button>
+        </div>
+    </form>
+</div>

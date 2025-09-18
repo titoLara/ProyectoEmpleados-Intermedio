@@ -57,6 +57,9 @@ public class DepartamentoService {
 
     //METODO DELETE
     public Boolean deleteById(Long id){
+        departamentoRepository.findById(id)
+                .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST,"No se encontro el Departamento con el ID:"+id));
+
         try{
             departamentoRepository.deleteById(id);
             return true;

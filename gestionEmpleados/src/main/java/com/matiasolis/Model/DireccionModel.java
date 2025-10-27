@@ -1,5 +1,6 @@
 package com.matiasolis.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,7 @@ public class DireccionModel {
     private String paisEmpleado;
 
     @OneToOne(mappedBy = "direccionModel")
+    @JsonIgnore
     private EmpleadosModel empleadosModel;
 
 }

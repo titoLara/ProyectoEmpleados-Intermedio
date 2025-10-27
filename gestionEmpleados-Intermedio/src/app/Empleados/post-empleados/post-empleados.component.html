@@ -1,1 +1,31 @@
-<p>post-empleados works!</p>
+<div class="container-sm col-md-4  ">
+    <div class="text-center">
+        <label class="fs-4 fw-bold ">CREAR EMPLEADO</label>
+    </div>
+
+    <form [formGroup]="empleadoForm" (ngSubmit)="crear()" >
+        <div class="m-2">
+            <label class="col-md-5  fw-bold" for="">Nombre Empleado</label>
+            <input class="col-md-7" type="text" formControlName="nombreEmpleado">
+        </div>
+        
+        <div class="m-2">
+            <label class="col-md-5 fw-bold" for="">Apellido Empleado</label>
+            <input class="col-md-7" type="text" formControlName="apellidoEmpleado">
+        </div>
+
+        <div class="m-2">
+            <label class="col-md-5 fw-bold" for="">Fecha Cumpleaños</label>
+            <input class="col-md-7" type="date" formControlName="fechaCumpleaños">
+        </div>
+
+        <div class="m-2">
+            <label class="col-md-5 fw-bold" for="">Dni Empleado</label>
+            <input class="col-md-7" type="number" formControlName="dniEmpleado">
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="m-1 btn btn-success">Crear</button>
+        </div>
+    </form>
+</div>

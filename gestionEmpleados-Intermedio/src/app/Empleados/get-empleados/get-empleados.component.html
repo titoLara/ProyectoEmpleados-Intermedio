@@ -1,1 +1,27 @@
-<p>get-empleados works!</p>
+<div class="container-sm">
+    <h1>Ver Empleados</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Cumpleaños</th>
+                <th>DNI</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (empleado of empleado; track $index) {
+                <tr>
+                    <td>{{empleado.idEmpleado}}</td>
+                    <td>{{empleado.nombreEmpleado}}</td>
+                    <td>{{empleado.apellidoEmpleado}}</td>
+                    <td>{{empleado.fechaCumpleanios}}</td>
+                    <td>{{empleado.dniEmpleado}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

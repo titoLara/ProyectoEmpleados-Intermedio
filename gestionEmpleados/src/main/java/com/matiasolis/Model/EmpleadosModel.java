@@ -24,7 +24,7 @@ public class EmpleadosModel {
     private String apellidoEmpleado;
 
     @Column(nullable = false)
-    private LocalDate fechaCumpleaños;
+    private LocalDate fechaCumpleanios;
 
     @Column(nullable = false)
     private String dniEmpleado;

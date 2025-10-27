@@ -30,7 +30,6 @@ export class PostDepartamentosComponent {
   }
 
   guardar(){
-    console.log(this.departamentoForm.value)
     this.departamentoService.postDepartamento(this.departamentoForm.value).subscribe({
       next:(data)=>{
         Swal.fire("EXITO","El departamento se creo Exitosamente",'success')

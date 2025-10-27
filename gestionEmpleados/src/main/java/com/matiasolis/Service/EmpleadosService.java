@@ -48,7 +48,7 @@ public class EmpleadosService {
         try {
             empleados.setNombreEmpleado(request.getNombreEmpleado());
             empleados.setApellidoEmpleado(request.getApellidoEmpleado());
-            empleados.setFechaCumpleaños(request.getFechaCumpleaños());
+            empleados.setFechaCumpleanios(request.getFechaCumpleanios());
             empleados.setDniEmpleado(request.getDniEmpleado());
             empleados.setDireccionModel(request.getDireccionModel());
 

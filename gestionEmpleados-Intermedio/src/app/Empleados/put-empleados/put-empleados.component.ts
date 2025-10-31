@@ -13,13 +13,19 @@ import { DepartamentosService } from '../../Servicios/Departamentos/departamento
 import { CargosService } from '../../Servicios/Cargos/cargos.service';
 import { ProyectosService } from '../../Servicios/proyectos.service';
 
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-put-empleados',
-  imports: [FormsModule, RouterLink, ReactiveFormsModule],
+  imports: [FormsModule, RouterLink, ReactiveFormsModule, CommonModule],
   templateUrl: './put-empleados.component.html',
   styleUrl: './put-empleados.component.scss'
 })
 export class PutEmpleadosComponent {
+
+  listarDepartamentos: Departamentos []=[];
+  listarCargos: Cargos []=[];
+  listarProyectos: Proyecto []=[]
 
 
   empleados : Empleados = {
@@ -39,20 +45,26 @@ export class PutEmpleadosComponent {
     private empleadoService: EmpleadoService, 
     public router: Router, 
     private route: ActivatedRoute,
-
+    private departamentosService: DepartamentosService,
+    private cargosService: CargosService,
+    private proyectosService: ProyectosService,
   ){}
+
 
   ngOnInit() : void{
 
-
-
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if(id){
+
+      this.departamentosService.getDepartamento().subscribe(data => this.listarDepartamentos = data);
+      this.cargosService.getCargo().subscribe(data => this.listarCargos = data);
+      this.proyectosService.getProyecto().subscribe(data => this.listarProyectos = data);
+
       this.empleadoService.getEmpleadoById(id).subscribe({
         next :(data)=>{
           this.empleados = data;
 
-
+          
         }, 
         error : (err)=>{
           console.log(err)

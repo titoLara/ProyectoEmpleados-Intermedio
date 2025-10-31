@@ -48,9 +48,9 @@ public class EmpleadosService {
         try {
             empleados.setNombreEmpleado(request.getNombreEmpleado());
             empleados.setApellidoEmpleado(request.getApellidoEmpleado());
+            empleados.setDireccionEmpleado(request.getDireccionEmpleado());
             empleados.setFechaCumpleanios(request.getFechaCumpleanios());
             empleados.setDniEmpleado(request.getDniEmpleado());
-            empleados.setDireccionModel(request.getDireccionModel());
 
             if (request.getCargoModel()==null || request.getCargoModel().getIdCargo()==null ){
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Tiene que poner un Id de Cargo Valido");

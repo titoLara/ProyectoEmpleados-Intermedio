@@ -30,6 +30,11 @@ export const routes: Routes = [
         component :  EmpleadosPincipalComponent,
         children:[
             {
+                path: "",
+                redirectTo: "crearEmpleado",
+                pathMatch: 'full'
+            },
+            {
                 path: "crearEmpleado",
                 component: PostEmpleadosComponent
             },
@@ -38,7 +43,7 @@ export const routes: Routes = [
                 component : GetEmpleadosComponent
             },
             {
-                path : "actualizarEmpleado",
+                path : "actualizarEmpleado/:id",
                 component : PutEmpleadosComponent
             }
         ]

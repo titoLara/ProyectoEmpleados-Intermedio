@@ -9,6 +9,7 @@
                 <th>Apellido</th>
                 <th>Cumpleaños</th>
                 <th>DNI</th>
+                <th>Acciones</th>
             </tr>
         </thead>
 
@@ -20,6 +21,10 @@
                     <td>{{empleado.apellidoEmpleado}}</td>
                     <td>{{empleado.fechaCumpleanios}}</td>
                     <td>{{empleado.dniEmpleado}}</td>
+                    <td>
+                        <button [routerLink]="['/empleados/actualizarEmpleado', empleado.idEmpleado]" class="btn btn-primary m-1">Editar</button>
+                        <button (click)="confirmDelete(empleado.idEmpleado)" class="btn btn-danger">Eliminar</button>
+                    </td>
                 </tr>
             }
         </tbody>

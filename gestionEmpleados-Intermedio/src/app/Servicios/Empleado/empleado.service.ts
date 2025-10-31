@@ -14,7 +14,19 @@ export class EmpleadoService {
     return this.http.get<Empleados[]>(this.API_URL)
   }
 
+  getEmpleadoById(idEmpleado:number ){
+    return this.http.get<Empleados>(`${this.API_URL}/${idEmpleado}`)
+  }
+
   postEmpleado(empleados : Empleados){
     return this.http.post<Empleados>(this.API_URL, empleados)
+  }
+
+  putEmpledao(idEmpleado: number, empleado: Empleados){
+    return this.http.put<Empleados>(`${this.API_URL}/${idEmpleado}`, empleado)
+  }
+
+  deleteEmpleado(idEmpleado:number){
+    return this.http.delete<Empleados>(`${this.API_URL}/${idEmpleado}`)
   }
 }

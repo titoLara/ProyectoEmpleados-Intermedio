@@ -1,1 +1,61 @@
-<p>put-empleados works!</p>
+<div class="container-sm col-md-4  ">
+    <div class="text-center">
+        <label class="fs-4 fw-bold ">Actualizando Empleado</label>
+    </div>
+
+    <form (ngSubmit)="putEmpleado()" >
+        <div class="m-2">
+            <label class="col-md-5  fw-bold" for="">Nombre Empleado</label>
+            <input class="col-md-7" type="text" [(ngModel)]="empleados.nombreEmpleado" name="nombreEmpleado">
+        </div>
+        
+        <div class="m-2">
+            <label class="col-md-5 fw-bold" for="">Apellido Empleado</label>
+            <input class="col-md-7" type="text" [(ngModel)]="empleados.apellidoEmpleado" name="apellidoEmpleado">
+        </div>
+
+        <div class="m-2">
+            <label class="col-md-5 fw-bold" for="">Fecha Cumpleaños</label>
+            <input class="col-md-7" type="date" [(ngModel)]="empleados.fechaCumpleanios" name="fechaCumpleanios">
+        </div>
+
+                <div class="m-2">
+            <label class="col-md-5 fw-bold" for="">Direccoin</label>
+            <input class="col-md-7" type="text" [(ngModel)]="empleados.direccionEmpleado" name="direccionEmpleado" >
+        </div>
+
+
+        <div class="m-2">
+            <label class="col-md-5 fw-bold" for="">Dni Empleado</label>
+            <input class="col-md-7" type="number" [(ngModel)]="empleados.dniEmpleado" name="dniEmpleado">
+        </div>
+
+        <div>
+            <label for="">Departamento</label>
+            <select name="departamentoModel" id="" [(ngModel)]="empleados.departamentoModel" >
+                <option >Seleccione Un Departamento</option>
+                <option *ngFor="let d of listarDepartamentos" [ngValue]="d">{{d.nombreDepartamento}}</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="">Cargos</label>
+            <select name="cargoModel" id="" [(ngModel)]="empleados.cargoModel">
+                <option >Selecciones un Cargo</option>
+                <option *ngFor="let c of listarCargos" [ngValue]="c">{{c.nombreCargo}}</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="">Proyectos</label>
+            <select name="proyectoModels" id="" [(ngModel)]="empleados.proyectoModel" multiple>
+                <option >Seleccione un Proyecto</option>
+                <option *ngFor="let p of listarProyectos" [ngValue]="p" >{{p.nombreProyecto}}</option>
+            </select>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="m-1 btn btn-success">Actualizar</button>
+        </div>
+    </form>
+</div>

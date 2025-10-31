@@ -23,6 +23,9 @@ public class EmpleadosModel {
     @Column(nullable = false)
     private String apellidoEmpleado;
 
+    @Column(nullable =false)
+    private String direccionEmpleado;
+
     @Column(nullable = false)
     private LocalDate fechaCumpleanios;
 
@@ -30,9 +33,9 @@ public class EmpleadosModel {
     private String dniEmpleado;
 
     //ONE TO ONE
-    @OneToOne(cascade = CascadeType.ALL)
+    /*@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "direccion_id")
-    private DireccionModel direccionModel;
+    private DireccionModel direccionModel;*/
 
     //MANYTOONE DEPARTAMENTO
     @ManyToOne

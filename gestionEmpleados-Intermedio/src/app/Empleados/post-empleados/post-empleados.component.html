@@ -30,25 +30,25 @@
             <input class="col-md-7" type="number" formControlName="dniEmpleado">
         </div>
 
-        <div>
-            <label for="">Departamento</label>
-            <select name="" id="" formControlName="departamentoModel">
+        <div class="m-2">
+            <label class="form-label fw-bold">Departamento</label>
+            <select class="form-select" name="" id="" formControlName="departamentoModel">
                 <option [ngValue]="null">Seleccione Un Departamento</option>
                 <option *ngFor="let d of listarDepartamentos" [ngValue]="d">{{d.nombreDepartamento}}</option>
             </select>
         </div>
 
-        <div>
-            <label for="">Cargos</label>
-            <select name="" id="" formControlName="cargoModel">
+        <div class="m-2">
+            <label class="form-label fw-bold">Cargos</label>
+            <select class="form-select" name="" id="" formControlName="cargoModel">
                 <option [ngValue]="null">Selecciones un Cargo</option>
                 <option *ngFor="let c of listarCargos" [ngValue]="c">{{c.nombreCargo}}</option>
             </select>
         </div>
 
-        <div>
-            <label for="">Proyectos</label>
-            <select name="" id="" formControlName="proyectoModels" multiple>
+        <div class="m-2">
+            <label class="form-label fw-bold">Proyectos</label>
+            <select class="form-select" name="" id="" formControlName="proyectoModels" multiple>
                 <option [ngValue]="null">Seleccione un Proyecto</option>
                 <option *ngFor="let p of listarProyectos" [ngValue]="p">{{p.nombreProyecto}}</option>
             </select>

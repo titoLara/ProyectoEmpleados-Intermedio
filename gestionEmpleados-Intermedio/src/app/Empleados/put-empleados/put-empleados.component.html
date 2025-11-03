@@ -30,25 +30,25 @@
             <input class="col-md-7" type="number" [(ngModel)]="empleados.dniEmpleado" name="dniEmpleado">
         </div>
 
-        <div>
-            <label for="">Departamento</label>
-            <select name="departamentoModel" id="" [(ngModel)]="empleados.departamentoModel" >
+        <div class="m-2">
+            <label class="form-label fw-bold" for="">Departamento</label>
+            <select class="form-select" name="departamentoModel" id="" [(ngModel)]="empleados.departamentoModel" >
                 <option >Seleccione Un Departamento</option>
                 <option *ngFor="let d of listarDepartamentos" [ngValue]="d">{{d.nombreDepartamento}}</option>
             </select>
         </div>
 
-        <div>
-            <label for="">Cargos</label>
-            <select name="cargoModel" id="" [(ngModel)]="empleados.cargoModel">
+        <div class="m-2">
+            <label class="form-label fw-bold" for="">Cargos</label>
+            <select class="form-select" name="cargoModel" id="" [(ngModel)]="empleados.cargoModel">
                 <option >Selecciones un Cargo</option>
                 <option *ngFor="let c of listarCargos" [ngValue]="c">{{c.nombreCargo}}</option>
             </select>
         </div>
 
-        <div>
-            <label for="">Proyectos</label>
-            <select name="proyectoModels" id="" [(ngModel)]="empleados.proyectoModel" multiple>
+        <div class="m-2">
+            <label class="form-label fw-bold" for="">Proyectos</label>
+            <select class="form-select" name="proyectoModels" id="" [(ngModel)]="empleados.proyectoModel" multiple>
                 <option >Seleccione un Proyecto</option>
                 <option *ngFor="let p of listarProyectos" [ngValue]="p" >{{p.nombreProyecto}}</option>
             </select>

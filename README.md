@@ -49,3 +49,30 @@ Permite **Crear, Listar, Editar y Eliminar empleados**, asignarles cargos, depar
 3. Crea la base de datos:
    ```sql
    CREATE DATABASE gestion_empleados_intermedio;
+
+
+---
+
+## 🖼️ CAPTURAS DE PANTALLA
+
+### 🏠 Inicio del Sistema
+Vista principal de la aplicación donde se muestra el panel inicial o la lista de empleados existentes.
+<img width="1365" height="579" alt="image" src="https://github.com/user-attachments/assets/c34ae84a-3592-46df-86bb-1e2b8f60f5e2" />
+
+
+---
+
+### 🧾 Formulario de Creación de Empleado
+Formulario con validaciones reactivas y selects dinámicos para asignar **Departamento**, **Cargo** y **Proyecto**.
+<img width="901" height="623" alt="image" src="https://github.com/user-attachments/assets/b430aee8-807d-4552-a360-cb527b9eea7e" />
+
+
+---
+
+### 💬 Notificación con SweetAlert2
+Ejemplo de alerta al crear un nuevo empleado exitosamente, utilizando la librería **SweetAlert2** para una mejor experiencia visual.
+<img width="1272" height="642" alt="image" src="https://github.com/user-attachments/assets/9f4819eb-8d22-42d9-914d-1d6308f9e07d" />
+
+
+---
+
